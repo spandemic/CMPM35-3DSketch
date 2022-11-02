@@ -42,8 +42,8 @@ function draw() {
         }
     }
 
-    // inner core
-    for (let phi = 15; phi < 345; phi += 15) {
+    // inner swarm
+    for (let phi = 45; phi < 345; phi += 15) {
         push();
         fill(phi % 180);
         for (let theta = 0; theta < 360; theta += 15) {
@@ -64,5 +64,30 @@ function draw() {
         }
         pop();
     }
+
+    // BIBLICALLY ACCURATE ANGEL
+    push();
+    noStroke();
+    rotateY(1.5 * frameCount + 15);
+    rotateZ(1.5 * frameCount);
+    torus(150, 15, 6, 6);
+    pop();
+
+    push();
+    noStroke();
+    rotateX(-1.5 * frameCount);
+    rotateZ(1.5 * frameCount - 12);
+    torus(150, 15, 5, 6);
+    pop();
+
+    push();
+    noStroke();
+    rotateY(-1.5 * frameCount);
+    rotateX(1.5 * frameCount+ 35);
+    torus(150, 15, 4, 6);
+    pop();
+
+    // eyeball
+    
 }
   
