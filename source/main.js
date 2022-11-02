@@ -12,8 +12,11 @@ function setup() {
   }
   
 function draw() {
-    orbitControl();
-    background(0);
+    // orbitControl();
+    // background("#400459");
+
+    // ambientLight(60, 60, 60)
+    pointLight("#f0d067", 200, -200, 0);
 
     // formula for calculating points on a sphere
     // x = r(sin(phi)cos(theta))
@@ -67,27 +70,35 @@ function draw() {
 
     // BIBLICALLY ACCURATE ANGEL
     push();
-    noStroke();
-    rotateY(1.5 * frameCount + 15);
-    rotateZ(1.5 * frameCount);
-    torus(150, 15, 6, 6);
-    pop();
+    specularMaterial("#FFc400");
+    shininess(50);
+        push();
+        noStroke();
+        rotateY(1.5 * frameCount + 15);
+        rotateZ(1.5 * frameCount);
+        torus(150, 15, 6, 6);
+        pop();
 
-    push();
-    noStroke();
-    rotateX(-1.5 * frameCount);
-    rotateZ(1.5 * frameCount - 12);
-    torus(150, 15, 5, 6);
-    pop();
+        push();
+        noStroke();
+        rotateX(-1.5 * frameCount);
+        rotateZ(1.5 * frameCount - 12);
+        torus(150, 15, 5, 6);
+        pop();
 
-    push();
-    noStroke();
-    rotateY(-1.5 * frameCount);
-    rotateX(1.5 * frameCount+ 35);
-    torus(150, 15, 4, 6);
+        push();
+        noStroke();
+        rotateY(-1.5 * frameCount);
+        rotateX(1.5 * frameCount+ 35);
+        torus(150, 15, 4, 6);
+        pop();
     pop();
 
     // eyeball
-    
+    push();
+    noStroke();
+    fill(255);
+    ellipsoid(60, 60, 60);
+    pop();
 }
   
